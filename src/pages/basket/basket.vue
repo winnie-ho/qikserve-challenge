@@ -3,10 +3,12 @@
 
 <script>
 import navBar from "../../components/navBar/navBar.vue"
+import basketItem from "../../components/basketItem/basketItem.vue"
 export default {
   name: "basket",
   components: {
-    "nav-bar": navBar
+    "nav-bar": navBar,
+    "basket-item": basketItem
   },
   data() {
     return {
@@ -18,7 +20,9 @@ export default {
     
   },
   computed: {
-    
+    basket(){
+      return this.$store.state.basket;
+    }
   }
 };
 </script>

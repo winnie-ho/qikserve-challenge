@@ -1,4 +1,12 @@
 <div id='basket'>
   <nav-bar></nav-bar>
   <h1>Basket</h1>
+
+  <table>
+    <basket-item 
+      v-for='(product, index) in basket' 
+      v-bind:key='product.index'
+      v-bind:product='product'>
+    </basket-item>
+  </table>
 </div>
