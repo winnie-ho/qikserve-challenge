@@ -2,8 +2,10 @@
 <style scoped src='./basketItem.css'></style>
 
 <script src>
+  import renderData from '../../mixins/renderData.js'
   export default {
     name: 'basketItem',
+    mixins: [ renderData ],
     data () {
       return {
       }
@@ -14,9 +16,6 @@
         this.$store.dispatch('addToBasket', product);
         this.$store.dispatch('fetchProduct', product.id);
       },
-      productPrice(price){
-        return `£${price/100}`;
-      }
     },
     computed: {
 

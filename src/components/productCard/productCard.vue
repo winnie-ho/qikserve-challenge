@@ -2,8 +2,10 @@
 <style scoped src='./productCard.css'></style>
 
 <script src>
+  import renderData from '../../mixins/renderData.js'
   export default {
     name: 'productCard',
+    mixins: [ renderData ],
     data () {
       return {
       }
@@ -12,13 +14,10 @@
     methods: {
       addToBasket(product){
         this.$store.dispatch('addToBasket', product.id);
-      },
-      productPrice(price){
-        return `£${price/100}`;
       }
     },
     computed: {
-      
+
     }
   }
 </script>

@@ -9,4 +9,8 @@
       v-bind:product='product'>
     </basket-item>
   </table>
+  <div>
+    <h3>Number of items: {{ basket.length }}</h3>
+    <h3>Total: {{ renderPrice(basketTotal) }}</h3>
+  </div>
 </div>
