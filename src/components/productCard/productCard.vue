@@ -12,6 +12,7 @@
     methods: {
       addToBasket(product){
         this.$store.dispatch('addToBasket', product);
+        this.$store.dispatch('fetchProduct', product.id);
       },
       productPrice(price){
         return `£${price/100}`;
