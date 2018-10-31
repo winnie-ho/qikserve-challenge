@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import products from './pages/products/products.vue'
+import home from './pages/home/home.vue'
 
 export default {
   name: 'App',
   components: {
-    'products': products,
+    'home': home,
   }
 }
 </script>

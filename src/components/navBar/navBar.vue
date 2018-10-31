@@ -17,8 +17,8 @@ export default {
     enterHomePage(){
       this.$router.push('/');
     },
-    enterMenuPage(){
-      this.$router.push('/menu');
+    enterProductsPage(){
+      this.$router.push('/products');
     },
     enterBasketPage(){
       this.$router.push('/basket');

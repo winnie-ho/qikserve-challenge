@@ -1,10 +1,10 @@
-<template src='./menu.html'></template>
-<style scoped src='./menu.css'></style>
+<template src='./products.html'></template>
+<style scoped src='./products.css'></style>
 
 <script>
 import navBar from "../../components/navBar/navBar.vue"
 export default {
-  name: "menu",
+  name: "products",
   components: {
     "nav-bar": navBar
   },
@@ -13,6 +13,7 @@ export default {
     };
   },
   mounted() {
+    this.$store.dispatch('fetchProducts');
   },
   methods: {
     
