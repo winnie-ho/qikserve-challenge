@@ -14,7 +14,15 @@ export default {
   mounted() {
   },
   methods: {
-    
+    enterHomePage(){
+      this.$router.push('/');
+    },
+    enterMenuPage(){
+      this.$router.push('/menu');
+    },
+    enterBasketPage(){
+      this.$router.push('/basket');
+    }
   },
   computed: {
     
