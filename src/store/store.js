@@ -21,7 +21,7 @@ export const store = new Vuex.Store({
     fetchProducts: (context) => {
       Vue.http.get('http://localhost:8081/products').then(response => {
         if (response.status === 200) {
-          context.commit('setProducts', response.data)
+          context.commit('setProducts', response.body)
         } else {
           console.log('Failed request', `${response.status} ${response.statusText}`);
         }
