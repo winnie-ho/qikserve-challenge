@@ -3,10 +3,12 @@
 
 <script>
 import navBar from "../../components/navBar/navBar.vue"
+import productCard from "../../components/productCard/productCard.vue"
 export default {
   name: "products",
   components: {
-    "nav-bar": navBar
+    "nav-bar": navBar,
+    "product-card": productCard
   },
   data() {
     return {
@@ -16,9 +18,6 @@ export default {
     this.$store.dispatch('fetchProducts');
   },
   methods: {
-    productPrice(price){
-      return `£${price/100}`;
-    }
   },
   computed: {
     products(){
