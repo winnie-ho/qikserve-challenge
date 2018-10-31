@@ -31,13 +31,11 @@ export const store = new Vuex.Store({
         }
       })
     },
-    addToBasket: (context, product) => {
-      context.commit('addToBasket', product)
-    },
-    fetchProduct: (context, productId) => {
+    addToBasket: (context, productId) => {
       Vue.http.get(`http://localhost:8081/products/${productId}`).then(response => {
         if (response.status === 200) {
           context.commit('setProduct', response.body);
+          context.commit('addToBasket', response.body);
         } else {
           console.log('Failed request', `${response.status} ${response.statusText}`);
         }
