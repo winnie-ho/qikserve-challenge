@@ -1,4 +1,12 @@
 <div id='products'>
   <nav-bar></nav-bar>
   <h1>Menu</h1>
+
+  <div class='product-list'>
+    <div v-for='(product, index) in products' v-bind:key='product.index'>
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.id }}</p>
+      <h3>{{ productPrice(product.price) }}</h3>
+    </div>
+  </div>
 </div>

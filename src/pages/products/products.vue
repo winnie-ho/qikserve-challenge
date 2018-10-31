@@ -16,10 +16,14 @@ export default {
     this.$store.dispatch('fetchProducts');
   },
   methods: {
-    
+    productPrice(price){
+      return `£${price/100}`;
+    }
   },
   computed: {
-    
+    products(){
+      return this.$store.state.products;
+    }
   }
 };
 </script>
