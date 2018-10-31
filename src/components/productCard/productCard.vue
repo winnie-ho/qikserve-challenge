@@ -11,7 +11,7 @@
     props: [ "product" ],
     methods: {
       addToBasket(product){
-        console.log('addToBasket', product.name)
+        this.$store.dispatch('addToBasket', product);
       },
       productPrice(price){
         return `£${price/100}`;

@@ -9,10 +9,12 @@ Vue.use(VueResource)
 
 export const store = new Vuex.Store({
   state: {
-    products: []
+    products: [],
+    basket: []
   },
   mutations: {
-    setProducts: (state, payload) => (state.products = payload)
+    setProducts: (state, payload) => (state.products = payload),
+    addToBasket: (state, payload) => (state.basket.push(payload)),
   },
   getters: {
 
@@ -26,6 +28,9 @@ export const store = new Vuex.Store({
           console.log('Failed request', `${response.status} ${response.statusText}`);
         }
       })
+    },
+    addToBasket: (context, product) => {
+      context.commit('addToBasket', product)
     }
   }
 })
