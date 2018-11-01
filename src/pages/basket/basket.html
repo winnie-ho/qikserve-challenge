@@ -21,5 +21,5 @@
     <h3>Total: {{ renderPrice(basketTotal) }}</h3>
   </div>
   <router-link to="/checkout" exact class='btn btn__primary' v-show='basket.length > 0'>Checkout</router-link>
-  <button v-on:click='emptyBasket' class='btn btn__secondary'>Empty Basket</button>
+  <button v-on:click='emptyBasket' class='btn btn__secondary' v-show='basket.length > 0'>Empty Basket</button>
 </div>
