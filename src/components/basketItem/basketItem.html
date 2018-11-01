@@ -8,7 +8,7 @@
     v-for='(promotion, index) in product.promotions' 
     v-bind:key='promotion.index'
     v-bind:product='promotion'>
-    <promotion-item v-bind:promotion='promotion'></promotion-item> 
+    <promotion-item v-bind:promotion='promotion' v-bind:product='product'></promotion-item> 
   </td>
   <td v-show='!showPromotions'>
     <button v-on:click='removeItem' class='btn btn__secondary'>Remove</button>

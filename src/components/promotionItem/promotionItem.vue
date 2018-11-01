@@ -10,23 +10,32 @@
       return {
       }
     },
-    props: [ "promotion" ],
+    props: [ "promotion", "product" ],
     methods: {
-      reductions(type){
-        switch (type) {
+      },
+    computed: {
+      savings(){
+        switch (this.promotion.type) {
           case "QTY_BASED_PRICE_OVERRIDE":
-            console.log('type1', type);
+            if (this.product.quantity >= this.promotion.required_qty){
+              const criteriaMetCount = Math.floor(this.product.quantity / this.promotion.required_qty);
+              const saving = ((this.product.price * this.promotion.required_qty) - this.promotion.price) * criteriaMetCount;
+              return this.renderPrice(saving);
+            }
             break;
           case "BUY_X_GET_Y_FREE":
-            console.log('type2', type);
+            if (this.product.quantity >= this.promotion.required_qty){
+              const criteriaMetCount = Math.floor(this.product.quantity / this.promotion.required_qty);
+              const saving = (this.product.price * (this.promotion.required_qty - this.promotion.free_qty)) * criteriaMetCount;
+              return this.renderPrice(saving);
+            }
             break;
           case "FLAT_PERCENT":
-            console.log('type3', type);
+            const saving = (this.product.price * (this.promotion.amount/100)) * this.product.quantity;
+            return this.renderPrice(saving);
             break;
         }
       }
-    },
-    computed: {
     }
   }
 </script>
