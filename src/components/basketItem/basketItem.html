@@ -1,4 +1,10 @@
 <tr id='basketItem'>
   <td>{{ product.name }}</td>
   <td>{{ renderPrice(product.price) }}</td>
+  <td 
+    v-for='(promotion, index) in product.promotions' 
+    v-bind:key='promotion.index'
+    v-bind:product='promotion'>
+    {{ promotion.type }}
+  </td>
 </tr>
