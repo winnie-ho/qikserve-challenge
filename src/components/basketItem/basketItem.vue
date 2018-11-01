@@ -12,10 +12,9 @@
     },
     props: [ "product" ],
     methods: {
-      addToBasket(product){
-        this.$store.dispatch('addToBasket', product);
-        this.$store.dispatch('fetchProduct', product.id);
-      },
+      removeItem(){
+        this.$store.dispatch('removeFromBasket', this.product);
+      }
     },
     computed: {
 

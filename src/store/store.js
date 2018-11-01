@@ -16,6 +16,7 @@ export const store = new Vuex.Store({
   mutations: {
     setProducts: (state, payload) => (state.products = payload),
     addToBasket: (state, payload) => (state.basket.push(payload)),
+    removeFromBasket: (state, payload) => (state.basket.splice(payload, 1)),
     emptyBasket: (state) => (state.basket = []),
     setProduct: (state, payload) => (state.product = payload)
   },
@@ -44,6 +45,10 @@ export const store = new Vuex.Store({
     },
     emptyBasket: (context) => {
       context.commit('emptyBasket');
+    },
+    removeFromBasket: (context, product) => {
+      const indexToRemove = context.state.basket.findIndex(item => item.id === product.id);
+      context.commit('removeFromBasket', indexToRemove);
     }
   }
 })
