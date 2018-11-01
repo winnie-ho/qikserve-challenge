@@ -4,6 +4,7 @@
 <script>
 import navBar from "../../components/navBar/navBar.vue"
 import basketItem from "../../components/basketItem/basketItem.vue"
+import checkout from "../../components/checkout/checkout.vue"
 import renderData from "../../mixins/renderData.js"
 
 export default {
@@ -11,7 +12,8 @@ export default {
   mixins: [ renderData ],
   components: {
     "nav-bar": navBar,
-    "basket-item": basketItem
+    "basket-item": basketItem,
+    "check-out": checkout
   },
   data() {
     return {
@@ -22,6 +24,9 @@ export default {
   methods: {
     emptyBasket(){
       this.$store.dispatch('emptyBasket');
+    },
+    checkout(){
+      this.$router.push('checkout');
     }
   },
   computed: {
