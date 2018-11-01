@@ -4,8 +4,30 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2A2D34;
-  margin-top: 60px;
 }
+
+.page-summary-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 45px;
+}
+
+.page-summary{
+  text-align: left;
+}
+
+table{
+  margin:auto;
+  padding: 20px;
+}
+
+th{
+  text-align: left;
+  padding: 10px;
+}
+
+
 
 .btn__primary{
   background-color: #009DDC;
