@@ -1,5 +1,8 @@
-<div id='navBar'>
-  <button v-on:click='enterHomePage'>Home</button>
-  <button v-on:click='enterProductsPage'>Menu</button>
-  <button v-on:click='enterBasketPage'>Basket</button>
+<div class='nav-bar'>
+  <button class='nav-bar__btn' v-on:click='enterHomePage'>Home</button>
+  <button class='nav-bar__btn' v-on:click='enterProductsPage'>Menu</button>
+  <div class='nav-bar__btn-status'>
+    <button class='nav-bar__btn' v-on:click='enterBasketPage'>Basket</button>
+    <div class='btn-status' v-show='basket.length > 0'>{{ basket.length }}</div>
+  </div>
 </div>

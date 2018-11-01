@@ -25,7 +25,9 @@ export default {
     }
   },
   computed: {
-    
+    basket(){
+      return this.$store.state.basket;
+    }
   }
 };
 </script>
