@@ -6,8 +6,7 @@
   <td 
     v-show='showPromotions'
     v-for='(promotion, index) in product.promotions' 
-    v-bind:key='promotion.index'
-    v-bind:product='promotion'>
+    v-bind:key='promotion.index'>
     <promotion-item v-bind:promotion='promotion' v-bind:product='product'></promotion-item> 
   </td>
   <td v-show='!showPromotions'>
