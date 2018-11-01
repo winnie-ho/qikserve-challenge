@@ -25,3 +25,9 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+### Assumptions
+
+01 - The API allows has "Access-Control-Allow-Origin": "*" included in it's headers.
+02 - A promotion is applied once selected from the menu.
