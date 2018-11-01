@@ -8,6 +8,13 @@
   </div>
 
   <div v-show='!basketIsEmpty'>
+    <div class='basket-summary-container'>
+      <div class='basket-summary'>
+        <h3>Number of items: {{ basket.length }}</h3>
+        <h3>Total: {{ renderPrice(basketTotal) }}</h3>
+      </div>
+      <router-link to="/checkout" exact class='btn btn__primary'>Checkout</router-link>
+    </div>
     <table>
       <tr>
         <th>Name</th>
@@ -17,16 +24,13 @@
         <th>Promotion</th>
       </tr>
       <basket-item 
-        v-for='(product, index) in uniqueBasketItems' 
-        v-bind:key='product.index'
-        v-bind:product='product'>
-      </basket-item>
-    </table>
-    <div>
-      <h3>Number of items: {{ basket.length }}</h3>
-      <h3>Total: {{ renderPrice(basketTotal) }}</h3>
-    </div>
-    <router-link to="/checkout" exact class='btn btn__primary'>Checkout</router-link>
-    <button v-on:click='emptyBasket' class='btn btn__secondary'>Empty Basket</button>
+      v-for='(product, index) in uniqueBasketItems' 
+      v-bind:key='product.index'
+      v-bind:product='product'>
+    </basket-item>
+  </table>
+
+  <button v-on:click='emptyBasket' class='btn btn__text'>Empty Basket</button>
+
   </div>
 </div>

@@ -16,6 +16,11 @@
   color: #009DDC;
 }
 
+.btn__text{
+  color: #009DDC;
+  border: unset!important;
+}
+
 .btn{
   border: 2px solid #009DDC;
   border-radius: 3px;
@@ -24,5 +29,6 @@
   margin: 5px;
   font-size: 14px;
   font-family: unset;
+  height: 100%;
 }
 
