@@ -3,8 +3,15 @@
   <h1>Basket</h1>
 
   <table>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Total Price</th>
+      <th>Promotion</th>
+    </tr>
     <basket-item 
-      v-for='(product, index) in basket' 
+      v-for='(product, index) in uniqueBasketItems' 
       v-bind:key='product.index'
       v-bind:product='product'>
     </basket-item>

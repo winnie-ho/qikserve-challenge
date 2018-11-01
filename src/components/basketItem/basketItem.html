@@ -1,6 +1,8 @@
 <tr id='basketItem'>
   <td>{{ product.name }}</td>
+  <td>{{ product.quantity }}</td>
   <td>{{ renderPrice(product.price) }}</td>
+  <td>{{ renderPrice(product.price * product.quantity) }}</td>
   <td 
     v-for='(promotion, index) in product.promotions' 
     v-bind:key='promotion.index'
