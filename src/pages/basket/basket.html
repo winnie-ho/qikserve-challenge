@@ -2,24 +2,27 @@
   <nav-bar></nav-bar>
   <h1>Basket</h1>
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Quantity</th>
-      <th>Unit Price</th>
-      <th>Total Price</th>
-      <th>Promotion</th>
-    </tr>
-    <basket-item 
-      v-for='(product, index) in uniqueBasketItems' 
-      v-bind:key='product.index'
-      v-bind:product='product'>
-    </basket-item>
-  </table>
-  <div>
-    <h3>Number of items: {{ basket.length }}</h3>
-    <h3>Total: {{ renderPrice(basketTotal) }}</h3>
+  <h2 v-show='basketIsEmpty'>Your shopping basket is empty</h2>
+  <div v-show='!basketIsEmpty'>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+        <th>Promotion</th>
+      </tr>
+      <basket-item 
+        v-for='(product, index) in uniqueBasketItems' 
+        v-bind:key='product.index'
+        v-bind:product='product'>
+      </basket-item>
+    </table>
+    <div>
+      <h3>Number of items: {{ basket.length }}</h3>
+      <h3>Total: {{ renderPrice(basketTotal) }}</h3>
+    </div>
+    <router-link to="/checkout" exact class='btn btn__primary'>Checkout</router-link>
+    <button v-on:click='emptyBasket' class='btn btn__secondary'>Empty Basket</button>
   </div>
-  <router-link to="/checkout" exact class='btn btn__primary' v-show='basket.length > 0'>Checkout</router-link>
-  <button v-on:click='emptyBasket' class='btn btn__secondary' v-show='basket.length > 0'>Empty Basket</button>
 </div>

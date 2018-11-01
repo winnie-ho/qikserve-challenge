@@ -43,6 +43,9 @@ export default {
         }
         return uniqueBasketItems;
       }, []);
+    },
+    basketIsEmpty(){
+      return this.basket.length === 0;
     }
   }
 };
