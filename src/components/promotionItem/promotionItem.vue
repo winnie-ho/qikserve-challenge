@@ -12,9 +12,21 @@
     },
     props: [ "promotion" ],
     methods: {
+      reductions(type){
+        switch (type) {
+          case "QTY_BASED_PRICE_OVERRIDE":
+            console.log('type1', type);
+            break;
+          case "BUY_X_GET_Y_FREE":
+            console.log('type2', type);
+            break;
+          case "FLAT_PERCENT":
+            console.log('type3', type);
+            break;
+        }
+      }
     },
     computed: {
-
     }
   }
 </script>
