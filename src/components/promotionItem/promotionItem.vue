@@ -21,15 +21,18 @@
               const criteriaMetCount = Math.floor(this.product.quantity / this.promotion.required_qty);
               return ((this.product.price * this.promotion.required_qty) - this.promotion.price) * criteriaMetCount;
             }
+            return 0;
             break;
           case "BUY_X_GET_Y_FREE":
             if (this.product.quantity >= this.promotion.required_qty){
               const criteriaMetCount = Math.floor(this.product.quantity / this.promotion.required_qty);
               return (this.product.price * (this.promotion.required_qty - this.promotion.free_qty)) * criteriaMetCount;
             }
+            return 0;
             break;
           case "FLAT_PERCENT":
             return (this.product.price * (this.promotion.amount/100)) * this.product.quantity;
+            return 0;
             break;
         }
       },
