@@ -15,7 +15,9 @@
       }
     },
     methods: {
-
+      pay(){
+        console.log('PAY')
+      }
     },
     computed: {
 
