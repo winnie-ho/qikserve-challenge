@@ -16,6 +16,7 @@ export const store = new Vuex.Store({
   mutations: {
     setProducts: (state, payload) => (state.products = payload),
     addToBasket: (state, payload) => (state.basket.push(payload)),
+    emptyBasket: (state) => (state.basket = []),
     setProduct: (state, payload) => (state.product = payload)
   },
   getters: {
@@ -40,6 +41,9 @@ export const store = new Vuex.Store({
           console.log('Failed request', `${response.status} ${response.statusText}`);
         }
       })
+    },
+    emptyBasket: (context) => {
+      context.commit('emptyBasket');
     }
   }
 })

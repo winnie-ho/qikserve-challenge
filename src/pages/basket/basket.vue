@@ -20,7 +20,9 @@ export default {
   mounted() {
   },
   methods: {
-    
+    emptyBasket(){
+      this.$store.dispatch('emptyBasket');
+    }
   },
   computed: {
     basket(){
