@@ -2,7 +2,11 @@
   <nav-bar></nav-bar>
   <h1>Basket</h1>
 
-  <h2 v-show='basketIsEmpty'>Your shopping basket is empty</h2>
+  <div v-show='basketIsEmpty'>
+    <h2>Your shopping basket is empty</h2>
+    <router-link to="/products" exact class='btn btn__primary'>Browse menu</router-link>
+  </div>
+
   <div v-show='!basketIsEmpty'>
     <table>
       <tr>
