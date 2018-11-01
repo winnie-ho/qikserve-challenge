@@ -1,6 +1,29 @@
 <div id='checkout'>
   <nav-bar></nav-bar>
   <h1>Checkout</h1>
+  <div>
+    <div class='page-summary-container'>
+      <div class='page-summary'>
+        <h3>Number of items: {{ basket.length }} </h3>
+        <h3>Total:</h3>
+      </div>
+      <button v-on:click='pay' exact class='btn btn__primary'>Pay</button>
+    </div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+      </tr>
+      <basket-item 
+        v-for='(product, index) in uniqueBasketItems' 
+        v-bind:key='product.index'
+        v-bind:product='product'
+        v-bind:showPromotions='true'>
+      </basket-item>
+    </table>
+  </div>
+
   <router-link to="/basket" exact class='btn btn__secondary'>Back to basket</router-link>
-  <button v-on:click='pay' exact class='btn btn__primary'>Pay</button>
 </div>
