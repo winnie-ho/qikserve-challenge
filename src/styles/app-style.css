@@ -1,0 +1,28 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2A2D34;
+  margin-top: 60px;
+}
+
+.btn__primary{
+  background-color: #009DDC;
+  color: white;
+}
+
+.btn__secondary{
+  color: #009DDC;
+}
+
+.btn{
+  border: 2px solid #009DDC;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
+  font-family: unset;
+}
+
