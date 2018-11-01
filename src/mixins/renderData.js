@@ -5,7 +5,7 @@ export default {
   },
   methods: {
     renderPrice: (price) => {
-      return `£${price/100}`;
+      return `£${ (price/100).toFixed(2) }`;
     }
   }
 }
