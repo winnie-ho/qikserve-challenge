@@ -11,4 +11,10 @@
 
 table{
   margin:auto;
+  padding: 20px;
+}
+
+th{
+  text-align: left;
+  padding: 10px;
 }
