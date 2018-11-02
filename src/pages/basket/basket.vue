@@ -29,7 +29,7 @@ export default {
       return this.$store.state.basket;
     },
     basketTotal(){
-      return this.$store.state.basket.reduce((total, item) => total + item.price, 0);
+      return this.$store.state.basket.reduce((total, item) => total + (item.price * item.quantity), 0);
     },
     basketIsEmpty(){
       return this.basket.length === 0;
