@@ -52,5 +52,9 @@ th{
   font-size: 14px;
   font-family: unset;
   height: 100%;
+  cursor: pointer;
 }
 
+.btn__circle{
+  border-radius: 50%;
+}

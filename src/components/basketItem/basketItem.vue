@@ -53,6 +53,12 @@
             return `${promotion.amount}% off`;
             break;
         }
+      },
+      addQty(quantity){
+        this.$store.dispatch('updateBasketQuantity', { value: 1, productId: this.product.id });
+      },
+      removeQty(){
+        this.$store.dispatch('updateBasketQuantity', { value: -1, productId: this.product.id });
       }
     },
     computed: {
