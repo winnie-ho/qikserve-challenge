@@ -19,11 +19,20 @@
     methods: {
       pay(){
         console.log('PAY')
-      },
+      }
     },
     computed: {
       basket(){
         return this.$store.state.basket;
+      },
+      basketTotal(){
+        return this.basket.reduce((basketTotal, item) => basketTotal + (item.price * item.quantity), 0);
+      },
+      basketSavings(){
+        return this.basket.reduce((basketSavings, item) => basketSavings + (item.saving), 0);
+      },
+      basketTotalWithSavings(){
+        return this.basketTotal - this.basketSavings;
       }
     }
   }
