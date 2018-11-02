@@ -19,25 +19,12 @@
     methods: {
       pay(){
         console.log('PAY')
-      }
+      },
     },
     computed: {
       basket(){
         return this.$store.state.basket;
-      },
-      uniqueBasketItems(){
-      return this.basket.reduce((uniqueBasketItems, item) => {
-        const existingItem = uniqueBasketItems.find(uniqueItem => uniqueItem.id === item.id);
-        if (!existingItem){
-          uniqueBasketItems.push(Object.assign({}, item, {
-            quantity: 1
-          }))
-        } else {
-          existingItem.quantity += 1;
-        }
-        return uniqueBasketItems;
-      }, []);
-    },
+      }
     }
   }
 </script>
