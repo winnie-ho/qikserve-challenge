@@ -1,9 +1,9 @@
 <tr id='basketItem'>
   <td>{{ product.name }}</td>
   <td>
-    <button v-on:click='addQty(product.quantity)' class='btn btn__circle'>+</button>
+    <button v-on:click='removeQty' class='btn btn__circle' v-show='!showPromotions'>−</button>
     {{ product.quantity }}
-    <button v-on:click='removeQty' class='btn btn__circle'>−</button>
+    <button v-on:click='addQty(product.quantity)' class='btn btn__circle' v-show='!showPromotions'>+</button>
   </td>
   <td>{{ renderPrice(product.price) }}</td>
   <td>{{ renderPrice(product.price * product.quantity) }}</td>
