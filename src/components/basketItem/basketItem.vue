@@ -15,7 +15,7 @@
       return {
       }
     },
-    props: [ "product" , "showPromotions"],
+    props: [ "product" , "showPromotions" ],
     methods: {
       removeItem(){
         this.$store.dispatch('removeFromBasket', this.product);

@@ -7,8 +7,12 @@
     v-show='showPromotions'
     v-for='(promotion, index) in product.promotions' 
     v-bind:key='promotion.index'>
-    <promotion-item v-bind:promotion='promotion' v-bind:product='product'></promotion-item> 
+    <promotion-item 
+      v-bind:promotion='promotion' 
+      v-bind:product='product'>
+    </promotion-item> 
   </td>
+  <!-- <td v-show='showPromotions'>{{ renderPrice(finalPrice) }}</td> -->
   <td v-show='!showPromotions'>
     <button v-on:click='removeItem' class='btn btn__secondary'>Remove</button>
   </td>
