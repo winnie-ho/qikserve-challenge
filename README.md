@@ -34,5 +34,17 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ### API Improvements
 
-01 - Include promotions on the product object on fetch all products call. Customers like to know that there is a promotion available when browsing.
-02 - Include images on the individual product call.
+
+#### Follow-up Questions
+1. How long did you spend on the test?
+2. What would you add if you had more time?
+    - Make a pay confirmation page.
+    - Optimise layout for mobile screens.
+3. How would you improve the product APIs that you had to consume? 
+    - Include promotions on the product object on fetch all products call. Customers like to know that there is a promotion available when browsing.
+    - Include images on the individual product call.
+4. What did you find most difficult?
+    - Deciding where to make the promotion calculations in terms of the components.
+5. How did you find the overall experience, any feedback for us?
+    - Quite fun exercise.
+    - I had to add a header to the API to run both the app and API locally. 
