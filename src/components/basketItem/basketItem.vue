@@ -40,6 +40,19 @@
             return (this.product.price * (promotion.amount/100)) * this.product.quantity;
             break;
         }
+      },
+      promotionText(promotion){
+        switch (promotion.type) {
+          case "QTY_BASED_PRICE_OVERRIDE":
+            return `Buy ${promotion.required_qty} for ${this.renderPrice(promotion.price)}`;
+            break;
+          case "BUY_X_GET_Y_FREE":
+            return `Buy ${promotion.required_qty} get ${promotion.free_qty} free`;
+            break;
+          case "FLAT_PERCENT":
+            return `${promotion.amount}% off`;
+            break;
+        }
       }
     },
     computed: {
