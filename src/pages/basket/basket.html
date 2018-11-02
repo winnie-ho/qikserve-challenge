@@ -10,7 +10,7 @@
   <div v-show='!basketIsEmpty'>
     <div class='page-summary-container'>
       <div class='page-summary'>
-        <h3>Number of items: {{ basket.length }}</h3>
+        <h3>Number of items: {{ renderBasketSize(basket) }}</h3>
         <h3>Total: {{ renderPrice(basketTotal) }}</h3>
       </div>
       <router-link to="/checkout" exact class='btn btn__primary'>Checkout</router-link>
@@ -23,7 +23,7 @@
         <th>Total Price</th>
       </tr>
       <basket-item 
-        v-for='(product, index) in uniqueBasketItems' 
+        v-for='(product, index) in basket' 
         v-bind:key='product.index'
         v-bind:product='product'
         v-bind:showPromotions='false'>

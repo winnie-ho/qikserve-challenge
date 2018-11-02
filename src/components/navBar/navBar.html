@@ -4,6 +4,6 @@
   
   <div class='nav-bar__btn-status'>
     <router-link to="/basket" exact class='nav-bar__btn'>Basket</router-link>
-    <div class='btn-status' v-show='basket.length > 0'>{{ basket.length }}</div>
+    <div class='btn-status' v-show='renderBasketSize(basket) > 0'>{{ renderBasketSize(basket) }}</div>
   </div>
 </div>
