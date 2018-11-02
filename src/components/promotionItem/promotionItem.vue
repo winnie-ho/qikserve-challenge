@@ -14,30 +14,32 @@
     methods: {
       },
     computed: {
-      savings(){
+      saving(){
         switch (this.promotion.type) {
           case "QTY_BASED_PRICE_OVERRIDE":
             if (this.product.quantity >= this.promotion.required_qty){
               const criteriaMetCount = Math.floor(this.product.quantity / this.promotion.required_qty);
-              return ((this.product.price * this.promotion.required_qty) - this.promotion.price) * criteriaMetCount;
+              const saving = ((this.product.price * this.promotion.required_qty) - this.promotion.price) * criteriaMetCount;
+              console.log('updateTotal', saving);
+              return saving;
             }
             return 0;
             break;
           case "BUY_X_GET_Y_FREE":
             if (this.product.quantity >= this.promotion.required_qty){
               const criteriaMetCount = Math.floor(this.product.quantity / this.promotion.required_qty);
-              return (this.product.price * (this.promotion.required_qty - this.promotion.free_qty)) * criteriaMetCount;
+              const saving = (this.product.price * (this.promotion.required_qty - this.promotion.free_qty)) * criteriaMetCount;
+              console.log('updateTotal', saving);
+              return saving
             }
             return 0;
             break;
           case "FLAT_PERCENT":
-            return (this.product.price * (this.promotion.amount/100)) * this.product.quantity;
-            return 0;
+            const saving = (this.product.price * (this.promotion.amount/100)) * this.product.quantity;
+            console.log('updateTotal', saving);
+            return saving
             break;
         }
-      },
-      finalPrice(){
-        return (this.product.quantity * this.product.price) - this.savings;
       }
     }
   }
