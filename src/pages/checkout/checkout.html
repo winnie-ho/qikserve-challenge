@@ -5,9 +5,9 @@
     <div class='page-summary-container'>
       <div class='page-summary'>
         <h3>Number of items: {{ renderBasketSize(basket) }} </h3>
-        <h3>Total: {{ renderPrice(basketTotal) }}</h3>
-        <h3>Total Savings: {{ renderPrice(basketSavings) }}</h3>
-        <h3>Final Total: {{ renderPrice(basketTotalWithSavings) }}</h3>
+        <h3>Subtotal: {{ renderPrice(basketTotal) }}</h3>
+        <h3>Savings: {{ renderPrice(basketSavings) }}</h3>
+        <h2>Total to pay: {{ renderPrice(basketTotalWithSavings) }}</h2>
       </div>
       <button v-on:click='pay' exact class='btn btn__primary'>Pay</button>
     </div>
