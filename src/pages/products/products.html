@@ -2,6 +2,18 @@
   <nav-bar></nav-bar>
   <h1>Menu</h1>
 
+  <div class='page-summary-container' v-show='basket.length > 0'>
+    <div class='page-summary'>
+      <h2>Your order</h2>
+      <div 
+        v-for='(product, index) in basket' 
+        v-bind:key='product.index' 
+        v-bind:product='product'>
+        <p>{{ product.quantity }}x {{ product.name }}</p>
+      </div>
+    </div>
+    <router-link to="/basket" exact class='btn btn__primary'>View basket</router-link>
+  </div>
   <div class='product-list'>
     <product-card 
       v-for='(product, index) in products' 
