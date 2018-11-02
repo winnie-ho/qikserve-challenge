@@ -13,7 +13,8 @@
     <div 
       v-for='(promotion, index) in product.promotions' 
       v-bind:key='promotion.index'>
-      {{ promotionText(promotion) }}: {{ renderPrice(calculateSaving(promotion)) }}
+      {{ promotionText(promotion) }}
+      <h5>You saved {{ renderPrice(calculateSaving(promotion)) }}</h5>
     </div>
     <h4>{{ renderPrice(totalSavings) }}</h4>
   </td>
