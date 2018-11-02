@@ -3,14 +3,10 @@
 
 <script src>
   import renderData from '../../mixins/renderData.js'
-  import promotionItem from "../../components/promotionItem/promotionItem.vue"
 
   export default {
     name: 'basketItem',
     mixins: [ renderData ],
-    components: {
-      "promotion-item": promotionItem,
-    },
     data () {
       return {
       }
@@ -58,7 +54,12 @@
         this.$store.dispatch('updateBasketQuantity', { value: 1, productId: this.product.id });
       },
       removeQty(){
-        this.$store.dispatch('updateBasketQuantity', { value: -1, productId: this.product.id });
+        if (this.product.quantity !== 0) {
+          this.$store.dispatch('updateBasketQuantity', { value: -1, productId: this.product.id });
+        } 
+        if (this.product.quantity === 0) {
+          this.$store.dispatch('removeFromBasket', this.product);
+        }
       }
     },
     computed: {
