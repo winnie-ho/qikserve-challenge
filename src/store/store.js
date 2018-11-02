@@ -16,7 +16,7 @@ export const store = new Vuex.Store({
   mutations: {
     setProducts: (state, payload) => (state.products = payload),
     addToBasket: (state, payload) => (state.basket.push(payload)),
-    updateBasketQuantity: (state, payload) => (state.basket[payload].quantity += 1),
+    updateBasketQuantity: (state, payload) => (state.basket[payload.indexToUpdate].quantity += payload.value),
     updateBasketSaving: (state, payload) => (state.basket[payload.indexToUpdate].saving = payload.saving),
     removeFromBasket: (state, payload) => (state.basket.splice(payload, 1)),
     emptyBasket: (state) => (state.basket = []),
@@ -57,8 +57,9 @@ export const store = new Vuex.Store({
         }
       })
     },
-    updateBasketQuantity: (context, existingItemIndex) => {
-      context.commit('updateBasketQuantity', existingItemIndex)
+    updateBasketQuantity: (context, action) => {
+      const indexToUpdate = context.state.basket.findIndex(item => item.id === action.productId);
+      context.commit('updateBasketQuantity', { value: action.value, indexToUpdate})
     },
     updateBasketSaving: (context, action) => {
       const indexToUpdate = context.state.basket.findIndex(item => item.id === action.productId);

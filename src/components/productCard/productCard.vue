@@ -18,7 +18,7 @@
           this.$store.dispatch('addToBasket', product.id);
         } else {
           const existingItemIndex = this.basket.findIndex(uniqueItem => uniqueItem.id === product.id);
-          this.$store.dispatch('updateBasketQuantity', existingItemIndex);
+          this.$store.dispatch('updateBasketQuantity', { value: 1, productId: product.id });
         }
       }
     },
