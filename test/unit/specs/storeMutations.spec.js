@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { store } from '@/store/store.js'
 import { mutations } from '@/store/store.js'
 import { mockState } from '../testHelper.js'
 
