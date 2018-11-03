@@ -5,20 +5,24 @@
   import navBar from "../../components/navBar/navBar.vue"
   import basketItem from "../../components/basketItem/basketItem.vue"
   import renderData from '../../mixins/renderData.js'
+  import router from '../../router'
+
   export default {
     name: 'checkout',
     mixins: [ renderData ],
     components: {
       "nav-bar": navBar,
       "basket-item": basketItem,
+      "router-link": router
     },
     data () {
       return {
+        paid: false
       }
     },
     methods: {
       pay(){
-        console.log('PAY')
+        this.paid = true;
       }
     },
     computed: {
