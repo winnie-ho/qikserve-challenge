@@ -3,12 +3,13 @@
 
 <script>
 import renderData from "../../mixins/renderData.js"
+import router from "../../router"
 
 export default {
   name: "navBar",
   mixins: [ renderData ],
   components: {
-
+    "router-link": router
   },
   data() {
     return {
