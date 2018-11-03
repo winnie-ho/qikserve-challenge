@@ -4,14 +4,14 @@
 <script>
 import navBar from "../../components/navBar/navBar.vue"
 import productCard from "../../components/productCard/productCard.vue"
-import router from '../../router'
+import routerNav from "../../mixins/routerNav.js"
 
 export default {
   name: "products",
+  mixins: [ routerNav ],
   components: {
     "nav-bar": navBar,
     "product-card": productCard,
-    "router-link": router
   },
   data() {
     return {
