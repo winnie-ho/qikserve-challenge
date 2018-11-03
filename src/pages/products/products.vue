@@ -4,11 +4,14 @@
 <script>
 import navBar from "../../components/navBar/navBar.vue"
 import productCard from "../../components/productCard/productCard.vue"
+import router from '../../router'
+
 export default {
   name: "products",
   components: {
     "nav-bar": navBar,
-    "product-card": productCard
+    "product-card": productCard,
+    "router-link": router
   },
   data() {
     return {
@@ -29,4 +32,3 @@ export default {
   }
 };
 </script>
-
