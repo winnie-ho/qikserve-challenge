@@ -5,6 +5,7 @@
 import navBar from "../../components/navBar/navBar.vue"
 import basketItem from "../../components/basketItem/basketItem.vue"
 import renderData from "../../mixins/renderData.js"
+import router from '../../router'
 
 export default {
   name: "basket",
@@ -12,6 +13,7 @@ export default {
   components: {
     "nav-bar": navBar,
     "basket-item": basketItem,
+    "router-link": router
   },
   data() {
     return {
