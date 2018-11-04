@@ -1,13 +1,12 @@
-import Vue from 'vue'
-import renderData from '@/mixins/renderData'
+import sharedBehaviours from '@/mixins/sharedBehaviours'
 
-describe('renderData.vue', () => {
+describe('sharedBehaviours.vue', () => {
   it('should renderPrice correctly', () => {
-    expect(renderData.methods.renderPrice(1111)).toBe('£11.11');
+    expect(sharedBehaviours.methods.renderPrice(1111)).toBe('£11.11');
   })
 
   it('should renderPrice to 2 decimal points only', () => {
-    const priceResult = renderData.methods.renderPrice(1111);
+    const priceResult = sharedBehaviours.methods.renderPrice(1111);
     const decimalUnits = priceResult.split(".")[1];
 
     expect(decimalUnits.length).toBe(2);
@@ -55,11 +54,11 @@ describe('renderData.vue', () => {
       }
     ]
 
-    expect(renderData.methods.renderBasketSize(basket)).toBe(15);
+    expect(sharedBehaviours.methods.renderBasketSize(basket)).toBe(15);
   })
 
   it('should renderBasketSize correctly when empty', () => {
     const basket = []
-    expect(renderData.methods.renderBasketSize(basket)).toBe(0);
+    expect(sharedBehaviours.methods.renderBasketSize(basket)).toBe(0);
   })
 })
