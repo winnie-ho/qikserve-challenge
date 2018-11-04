@@ -2,10 +2,10 @@
 <style scoped src='./productCard.css'></style>
 
 <script src>
-  import renderData from '../../mixins/renderData.js'
+  import sharedBehaviours from '../../mixins/sharedBehaviours.js'
   export default {
     name: 'productCard',
-    mixins: [ renderData ],
+    mixins: [ sharedBehaviours ],
     data () {
       return {
       }

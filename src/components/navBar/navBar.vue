@@ -2,13 +2,12 @@
 <style scoped src='./navBar.css'></style>
 
 <script>
-import renderData from "../../mixins/renderData.js"
-import routerNav from '../../mixins/routerNav.js'
+import sharedBehaviours from '../../mixins/sharedBehaviours.js';
 
 
 export default {
   name: "navBar",
-  mixins: [ renderData, routerNav ],
+  mixins: [ sharedBehaviours ],
   components: {
   },
   data() {

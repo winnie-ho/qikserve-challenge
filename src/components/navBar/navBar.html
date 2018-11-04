@@ -1,8 +1,8 @@
 <div class='nav-bar'>
-  <button class='nav-bar__btn' v-on:click='goToMenuPage'>Menu</button>
+  <button class='nav-bar__btn' v-on:click='changePage("/")'>Menu</button>
   
   <div class='nav-bar__btn-status'>
-    <button class='nav-bar__btn' v-on:click='goToBasketPage'>Basket</button>
+    <button class='nav-bar__btn' v-on:click='changePage("/basket")'>Basket</button>
     <div class='btn-status' v-show='renderBasketSize(basket) > 0'>{{ renderBasketSize(basket) }}</div>
   </div>
 </div>

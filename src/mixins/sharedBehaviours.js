@@ -5,6 +5,9 @@ export default {
     },
     renderBasketSize: (basket) => {
       return basket.reduce((total, item) => total + item.quantity, 0);
+    },
+    changePage(page){
+      this.$router.push(page);
     }
   }
 }

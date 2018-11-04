@@ -4,12 +4,11 @@
 <script>
 import navBar from "../../components/navBar/navBar.vue"
 import basketItem from "../../components/basketItem/basketItem.vue"
-import renderData from "../../mixins/renderData.js"
-import routerNav from '../../mixins/routerNav.js'
+import sharedBehaviours from "../../mixins/sharedBehaviours.js"
 
 export default {
   name: "basket",
-  mixins: [ renderData, routerNav ],
+  mixins: [ sharedBehaviours ],
   components: {
     "nav-bar": navBar,
     "basket-item": basketItem,

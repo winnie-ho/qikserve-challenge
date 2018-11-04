@@ -4,11 +4,11 @@
 <script>
 import navBar from "../../components/navBar/navBar.vue"
 import productCard from "../../components/productCard/productCard.vue"
-import routerNav from "../../mixins/routerNav.js"
+import sharedBehaviours from "../../mixins/sharedBehaviours.js"
 
 export default {
   name: "products",
-  mixins: [ routerNav ],
+  mixins: [ sharedBehaviours ],
   components: {
     "nav-bar": navBar,
     "product-card": productCard,

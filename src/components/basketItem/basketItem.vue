@@ -2,11 +2,11 @@
 <style scoped src='./basketItem.css'></style>
 
 <script src>
-  import renderData from '../../mixins/renderData.js'
+  import sharedBehaviours from '../../mixins/sharedBehaviours.js'
 
   export default {
     name: 'basketItem',
-    mixins: [ renderData ],
+    mixins: [ sharedBehaviours ],
     data () {
       return {
       }

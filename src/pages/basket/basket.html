@@ -4,7 +4,7 @@
 
   <div v-show='basketIsEmpty'>
     <h2>Your shopping basket is empty</h2>
-    <button class='btn btn__primary' v-on:click='goToMenuPage'>Browse menu</button>
+    <button class='btn btn__primary' v-on:click='changePage("/basket")'>Browse menu</button>
   </div>
 
   <div v-show='!basketIsEmpty'>
@@ -13,7 +13,7 @@
         <h3>Number of items: {{ renderBasketSize(basket) }}</h3>
         <h3>Total: {{ renderPrice(basketTotal) }}</h3>
       </div>
-      <button class='btn btn__primary' v-on:click='goToCheckoutPage'>Checkout</button>
+      <button class='btn btn__primary' v-on:click='changePage("/checkout")'>Checkout</button>
     </div>
     <table>
       <tr>
