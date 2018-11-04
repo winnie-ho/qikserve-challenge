@@ -6,19 +6,22 @@ import VueResource from 'vue-resource'
 Vue.use(Vuex)
 Vue.use(VueResource)
 
+
+export const mutations = {
+  setProducts: (state, payload) => (state.products = payload),
+  addToBasket: (state, payload) => (state.basket.push(payload)),
+  updateBasketQuantity: (state, payload) => (state.basket[payload.indexToUpdate].quantity += payload.value),
+  updateBasketSaving: (state, payload) => (state.basket[payload.indexToUpdate].saving = payload.saving),
+  removeFromBasket: (state, payload) => (state.basket.splice(payload, 1)),
+  emptyBasket: (state) => (state.basket = [])
+}
+
 export const store = new Vuex.Store({
   state: {
     products: [],
     basket: []
   },
-  mutations: {
-    setProducts: (state, payload) => (state.products = payload),
-    addToBasket: (state, payload) => (state.basket.push(payload)),
-    updateBasketQuantity: (state, payload) => (state.basket[payload.indexToUpdate].quantity += payload.value),
-    updateBasketSaving: (state, payload) => (state.basket[payload.indexToUpdate].saving = payload.saving),
-    removeFromBasket: (state, payload) => (state.basket.splice(payload, 1)),
-    emptyBasket: (state) => (state.basket = [])
-  },
+  mutations,
   getters: {
 
   },
@@ -61,13 +64,3 @@ export const store = new Vuex.Store({
     }
   }
 })
-
-
-export const mutations = {
-  setProducts: (state, payload) => (state.products = payload),
-  addToBasket: (state, payload) => (state.basket.push(payload)),
-  updateBasketQuantity: (state, payload) => (state.basket[payload.indexToUpdate].quantity += payload.value),
-  updateBasketSaving: (state, payload) => (state.basket[payload.indexToUpdate].saving = payload.saving),
-  removeFromBasket: (state, payload) => (state.basket.splice(payload, 1)),
-  emptyBasket: (state) => (state.basket = [])
-}
