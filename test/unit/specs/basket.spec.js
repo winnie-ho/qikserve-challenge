@@ -44,7 +44,7 @@ describe('basket.vue', () => {
 
 
   it('The store action to emptyBasket is triggered when "Empty basket" button is pressed', () => {    
-    basketComponent.find('button').trigger('click');
+    basketComponent.find('.btn__text').trigger('click');
     expect(actions.emptyBasket).toHaveBeenCalled();
 
   })
