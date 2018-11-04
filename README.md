@@ -31,8 +31,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 01 - The API allows has "Access-Control-Allow-Origin": "*" included in it's headers.
 02 - A promotion is applied once selected from the menu.
-
-### API Improvements
+03 - Future promotions will be any variation of the three given types.
+04 - More than one promotion can be redeemable on a product.
 
 
 #### Follow-up Questions
@@ -40,11 +40,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 2. What would you add if you had more time?
     - Make a pay confirmation page.
     - Optimise layout for mobile screens.
+    - Allow for new promotion additions if new types of promotion were to be introduced.
 3. How would you improve the product APIs that you had to consume? 
     - Include promotions on the product object on fetch all products call. Customers like to know that there is a promotion available when browsing.
     - Include images on the individual product call.
 4. What did you find most difficult?
     - Deciding where to make the promotion calculations in terms of the components.
+    - Testing.
 5. How did you find the overall experience, any feedback for us?
     - Quite fun exercise.
     - I had to add a header to the API to run both the app and API locally. 
