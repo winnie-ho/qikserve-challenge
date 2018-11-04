@@ -20,6 +20,7 @@
     },
     methods: {
       pay(){
+        console.log('PAY');
         this.paid = true;
       }
     },
