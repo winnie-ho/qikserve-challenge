@@ -35,6 +35,8 @@
           case "FLAT_PERCENT":
             return (this.product.price * (promotion.amount/100)) * this.product.quantity;
             break;
+          default:
+          return 0;
         }
       },
       promotionText(promotion){
