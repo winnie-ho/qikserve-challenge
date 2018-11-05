@@ -48,6 +48,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 3. How would you improve the product APIs that you had to consume? 
     - Include promotions on the product object on fetch all products call. Customers like to know that there is a promotion available when browsing.
     - Include images on the individual product call.
+    - Build in endpoints to create, edit and delete products and promotions. 
 4. What did you find most difficult?
     - Deciding where to make the promotion calculations in terms of the components.
     - Testing with Vue and Vuex store.
