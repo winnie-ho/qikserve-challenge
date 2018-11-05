@@ -37,10 +37,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 #### Follow-up Questions
 1. How long did you spend on the test?
+    - ~21 hours
 2. What would you add if you had more time?
     - Allow for new promotion additions if new types of promotion were to be introduced.
     - Build in error handling and user feedback.
-    - Better tests.
+    - Better tests and coverage.
     - Add end to end testing with Selenium or Katalon so can test user journey over different browsers and platforms.
     - With potentially more products, make the menu page more interesting.
     - Make CSS responsive for all screen size eventualities.
@@ -54,4 +55,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     - Testing with Vue and Vuex store.
 5. How did you find the overall experience, any feedback for us?
     - Quite fun exercise.
-    - I had to add a header to the API to run both the app and API locally. 
+    - I had to add a header; "Access-Control-Allow-Origin": "*",  to the API to run both the app and API locally. 
